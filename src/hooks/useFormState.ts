@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { UseFormReturn } from "react-hook-form";
 import {
   UserPosition,
@@ -38,56 +38,6 @@ export function useFormState(form: UseFormReturn<any>): UseFormStateReturn {
   const [pensionato, setPensionato] = useState<PensionatoData>(INITIAL_PENSIONATO_STATE);
   const [dipendente, setDipendente] = useState<DipendenteData>(INITIAL_DIPENDENTE_STATE);
 
-  // Load saved progress from localStorage
-  useEffect(() => {
-    const savedData = localStorage.getItem("creditplan_form_data");
-    if (savedData) {
-      try {
-        const parsed = JSON.parse(savedData);
-        form.setValue("nome", parsed.nome || "");
-        form.setValue("cognome", parsed.cognome || "");
-        form.setValue("mail", parsed.mail || "");
-        form.setValue("telefono", parsed.telefono || "");
-        form.setValue("meseNascita", parsed.meseNascita || "");
-        form.setValue("annoNascita", parsed.annoNascita || "");
-        if (parsed.contactInfoSubmitted) setContactInfoSubmitted(true);
-        if (parsed.userPosition) setUserPosition(parsed.userPosition);
-        if (parsed.pensionato) setPensionato(parsed.pensionato);
-        if (parsed.dipendente) setDipendente(parsed.dipendente);
-      } catch (e) {
-        console.error("Error loading saved form data:", e);
-      }
-    }
-  }, [form]);
-
-  // Save progress to localStorage
-  useEffect(() => {
-    const formData = {
-      nome: form.watch("nome"),
-      cognome: form.watch("cognome"),
-      mail: form.watch("mail"),
-      telefono: form.watch("telefono"),
-      meseNascita: form.watch("meseNascita"),
-      annoNascita: form.watch("annoNascita"),
-      contactInfoSubmitted,
-      userPosition,
-      pensionato,
-      dipendente,
-    };
-    localStorage.setItem("creditplan_form_data", JSON.stringify(formData));
-  }, [
-    form.watch("nome"),
-    form.watch("cognome"),
-    form.watch("mail"),
-    form.watch("telefono"),
-    form.watch("meseNascita"),
-    form.watch("annoNascita"),
-    contactInfoSubmitted,
-    userPosition,
-    pensionato,
-    dipendente,
-  ]);
-
   const getCurrentStep = useCallback(() => {
     if (showPersonalInfo) return 1;
     if (!userPosition) return 2;
@@ -110,7 +60,6 @@ export function useFormState(form: UseFormReturn<any>): UseFormStateReturn {
   }, [getCurrentStep, getTotalSteps]);
 
   const resetForm = useCallback(() => {
-    localStorage.removeItem("creditplan_form_data");
     setShowPersonalInfo(true);
     setUserPosition(null);
     setIsSubmitted(false);

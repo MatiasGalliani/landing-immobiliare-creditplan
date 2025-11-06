@@ -62,7 +62,6 @@ export function FormSection() {
     setTimeout(() => {
       setIsLoading(false);
       setIsSubmitted(true);
-      localStorage.removeItem('creditplan_form_data');
     }, 2500);
   }, [setIsLoading, setIsSubmitted]);
 
