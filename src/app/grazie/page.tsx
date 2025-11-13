@@ -26,7 +26,6 @@ export default function GraziePage() {
 
       <div className="w-full max-w-2xl">
         <div className="relative bg-white shadow-2xl border-0 rounded-3xl overflow-hidden">
-          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500"></div>
           <div className="p-10 text-center">
             <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
