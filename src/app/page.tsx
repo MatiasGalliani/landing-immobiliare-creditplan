@@ -14,44 +14,40 @@ const FormSection = dynamic(() => import('@/components/FormSection').then(mod =>
 // Extract static data outside component to prevent recreation
 const FAQ_ITEMS = [
   {
-    question: "Cos'è la Cessione del Quinto?",
-    answer: "La cessione del quinto è un prestito garantito con trattenuta diretta in busta paga o sulla pensione. Può essere richiesto senza dovere fornire motivazioni e l'importo massimo della rata non può eccedere il 20% dello stipendio netto mensile (un quinto)."
+    question: "Chi può candidarsi per collaborare con Creditplan?",
+    answer: "Cerchiamo in primo luogo agenti immobiliari e professionisti che lavorano già a contatto con chi compra o vende casa (titolari d'agenzia, collaboratori, procacciatori, consulenti). Valutiamo anche profili affini del mondo finanziario/assicurativo, purché ci sia mentalità commerciale, organizzazione e serietà professionale."
   },
   {
-    question: "Quali sono i costi e le commissioni associate?",
-    answer: "Nessun costo o commissioni accessorie; l'importo richiesto viene erogato \"chiavi in mano\"."
+    question: "Devo lasciare la mia agenzia o il mio lavoro attuale?",
+    answer: "No. La collaborazione con Creditplan è pensata come linea di business aggiuntiva, perfettamente compatibile con la tua attività di agente immobiliare. Continui a fare il tuo lavoro, ma in più puoi offrire mutui, finanziamenti, cessioni del quinto e altri prodotti di credito ai clienti che già segui."
   },
   {
-    question: "Quanto tempo serve per ottenere il prestito?",
-    answer: "Con Creditplan puoi ottenere la liquidità necessaria in pochi giorni grazie ai nostri partner bancari specializzati e al team qualificato."
+    question: "Il cliente resta \"mio\" o passa a voi?",
+    answer: "Il cliente resta sempre tuo. Tu sei il riferimento principale per chi compra o vende l'immobile. Noi mettiamo a disposizione backoffice, convenzioni bancarie e competenze sul credito, ma non entriamo in concorrenza sull'aspetto immobiliare. L'obiettivo è farti fare più servizio e più provvigioni, non toglierti clienti."
   },
   {
-    question: "Quali requisiti devo avere per richiedere la Cessione del Quinto?",
-    answer: "Puoi richiedere la Cessione del Quinto se sei un lavoratore dipendente (pubblico/statale o privato) con contratto a tempo indeterminato o un pensionato. Non è richiesto alcun garante."
+    question: "Serve avere la Partita IVA?",
+    answer: "Sì, la collaborazione è pensata per professionisti con Partita IVA (tipicamente agenti immobiliari o consulenti già strutturati). Se non ce l'hai ancora ma intendi aprirla, lo valuteremo insieme in fase di call per capire tempistiche e fattibilità reale."
   },
   {
-    question: "Esiste un limite massimo di età per la Cessione del Quinto?",
-    answer: "Sì, i pensionati possono ottenere il prestito fino a 89 anni alla scadenza del finanziamento."
+    question: "Che tipo di formazione è prevista? Quanto dura?",
+    answer: "È necessario seguire un percorso formativo riconosciuto (circa 12 ore di video-lezioni) erogato da una società esterna. Puoi scegliere l'ente formatore o seguire uno dei percorsi da noi consigliati. Al termine riceverai l'attestato necessario per accedere alla prova OAM."
   },
   {
-    question: "Cosa succede se non raggiungo i requisiti per rinnovare una Cessione del Quinto già in corso?",
-    answer: "In caso di mancato raggiungimento dei termini per il rinnovo, possiamo valutare insieme la Delegazione di Pagamento, una seconda trattenuta sullo stipendio che permette di ottenere ulteriore liquidità."
+    question: "In cosa consiste la prova valutativa OAM?",
+    answer: "La prova OAM si svolge online e consiste in 20 domande a risposta multipla. Devi rispondere correttamente ad almeno 12 domande su 20 per superarla. Superato l'esame, sarai accreditato con Creditplan e potrai iniziare a collaborare con il nostro supporto."
   },
   {
-    question: "Perché dovrei scegliere Creditplan?",
-    answer: "Le nostre convenzioni bancarie con i primari partner sul mercato, ci permettono di avere tassi competitivi e tempi rapidi di erogazione."
+    question: "Quanto posso guadagnare con questa collaborazione?",
+    answer: "Provvigioni variabili legate alle operazioni concluse (mutui, finanziamenti, prestiti, cessioni del quinto). Più clienti porti e più operazioni vanno a buon fine, più cresce il tuo reddito aggiuntivo. Durante la call ti spiegheremo la struttura provvigionale e faremo simulazioni concrete."
   },
   {
-    question: "Posso richiedere il prestito se sono stato segnalato come cattivo pagatore?",
-    answer: "Sì, la Cessione del Quinto è accessibile anche in caso di segnalazioni o protesti, in quanto non tiene conto delle segnalazioni nelle banche dati pubbliche."
+    question: "Ci sono costi di ingresso, fee o vincoli di esclusiva?",
+    answer: "Non applichiamo fee di ingresso o canoni di affiliazione per la collaborazione con Creditplan. Gli unici costi da considerare sono quelli legati al percorso formativo esterno e alla prova OAM, gestiti dagli enti preposti. Ci aspettiamo però serietà, continuità minima e rispetto delle procedure. Eventuali condizioni su esclusiva di zona o modalità specifiche di collaborazione vengono chiarite prima di iniziare, in totale trasparenza."
   },
   {
-    question: "È possibile estinguere anticipatamente la Cessione del Quinto?",
-    answer: "Sì, puoi estinguere anticipatamente il prestito in qualsiasi momento beneficiando dello storno degli interessi futuri dovuti."
-  },
-  {
-    question: "Quanto costa la consulenza con Creditplan?",
-    answer: "Nessun costo accessorio."
+    question: "In quanto tempo posso essere operativo dopo la candidatura?",
+    answer: "Il percorso prevede: candidatura, call conoscitiva, corso di formazione (12h), prova OAM e accredito. I tempi dipendono dalla velocità con cui completi corso e prova, ma in genere in poche settimane puoi essere operativo."
   }
 ] as const;
 
@@ -140,11 +136,11 @@ const BENEFITS_DATA = [
 
 const WHY_CHOOSE_BENEFITS_DATA = [
   {
-    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
     color: "blue",
-    title: "Velocità garantita",
-    description: "Approvazione preliminare in sole 24 ore lavorative",
-    detailedContent: "Con Creditplan, ricevi l'approvazione preliminare del tuo finanziamento in sole 24 ore lavorative. Il nostro team di consulenti esperti lavora in modo efficiente per valutare rapidamente la tua richiesta, garantendoti una risposta tempestiva e trasparente. Grazie alle nostre convenzioni con i principali istituti bancari, possiamo accelerare ogni fase del processo.",
+    title: "Più provvigioni dagli stessi clienti",
+    description: "Aggiungi mutui e finanziamenti alle trattative che fai già.",
+    detailedContent: "Da agente immobiliare oggi porti a casa la provvigione sulla compravendita.\n\nCon Creditplan puoi affiancare mutui e finanziamenti ai clienti che già segui, senza cambiare lavoro e senza stravolgere la tua agenda.\n\nOgni operazione di credito andata a buon fine diventa una linea di guadagno extra, costruita sulle relazioni che hai già sviluppato sul territorio.",
     gradientFrom: "from-blue-500",
     gradientTo: "to-blue-600",
     borderColor: "border-blue-200",
@@ -152,11 +148,11 @@ const WHY_CHOOSE_BENEFITS_DATA = [
     textColor: "text-blue-600"
   },
   {
-    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
     color: "green",
-    title: "Tranquillità totale",
-    description: "Rata fissa e importo costante per tutta la durata",
-    detailedContent: "Con la cessione del quinto, la tua rata mensile rimane sempre la stessa per tutta la durata del finanziamento. Non ci saranno sorprese o variazioni inaspettate: l'importo della rata è fisso e garantito, permettendoti di pianificare le tue spese con totale tranquillità e sicurezza finanziaria.",
+    title: "Servizio completo: casa + mutuo",
+    description: "Diventi il punto unico di riferimento per il cliente.",
+    detailedContent: "Dal 2022 la compatibilità è totale: agente immobiliare + consulente del credito = pacchetto completo.\n\nAcquirente e venditore non vogliono rimbalzare tra agenzia, banca, call center e preventivatori online.\n\nCon Creditplan affianchi alla tua attività la consulenza sul credito: l'agenzia diventa il luogo dove il cliente trova l'immobile, il mutuo, l'eventuale liquidità aggiuntiva e le risposte a tutte le sue domande finanziarie.\n\nChi offre questo livello di servizio oggi gioca in un campionato a parte.",
     gradientFrom: "from-emerald-500",
     gradientTo: "to-emerald-600",
     borderColor: "border-emerald-200",
@@ -164,11 +160,23 @@ const WHY_CHOOSE_BENEFITS_DATA = [
     textColor: "text-emerald-600"
   },
   {
-    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+    color: "indigo",
+    title: "Partnership testata, crescita concreta",
+    description: "Collaborazioni attive con agenti dal 2022.",
+    detailedContent: "Non stiamo \"sperimentando\" adesso: collaboriamo con agenti immobiliari da anni e sappiamo cosa funziona sul campo.\n\nAbbiamo costruito un modello semplice: formazione operativa, affiancamento sulle prime pratiche, regole chiare sulle provvigioni e supporto continuo.\n\nL'obiettivo è uno solo: aiutarti a diventare tra i primi in Italia, nella tua zona, a offrire un servizio integrato immobiliare + credito davvero strutturato, non improvvisato.",
+    gradientFrom: "from-indigo-500",
+    gradientTo: "to-indigo-600",
+    borderColor: "border-indigo-200",
+    bgColor: "bg-indigo-500/5",
+    textColor: "text-indigo-600"
+  },
+  {
+    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
     color: "amber",
-    title: "Massima trasparenza",
-    description: "Nessun costo nascosto, istruttoria gratuita e comunicazioni incluse",
-    detailedContent: "Con Creditplan, la trasparenza è al primo posto. Non ci sono costi nascosti o sorprese: l'istruttoria è completamente gratuita e tutte le comunicazioni sono incluse. Ti forniamo tutte le informazioni necessarie in modo chiaro e comprensibile, senza termini ambigui o clausole nascoste. La tua fiducia è la nostra priorità.",
+    title: "Backoffice e convenzioni al tuo servizio",
+    description: "Tu segui il cliente, noi ti supportiamo su mutui e finanziamenti.",
+    detailedContent: "Il cliente resta sempre tuo: sei tu il suo punto di riferimento.\n\nCon Creditplan hai alle spalle un backoffice dedicato e tutte le principali convenzioni per:\n\n• mutui casa\n• finanziamenti aziendali\n• prestiti personali e cessioni del quinto\n• coperture assicurative collegate\n\nTi aiutiamo nella scelta del prodotto, nella gestione dei passaggi più tecnici e nel dialogo con gli istituti, lasciando a te la relazione diretta con il cliente.\n\nPiù servizi per lui, più opportunità di guadagno per te, senza snaturare il tuo ruolo di agente immobiliare.",
     gradientFrom: "from-amber-500",
     gradientTo: "to-amber-600",
     borderColor: "border-amber-200",
@@ -180,21 +188,21 @@ const WHY_CHOOSE_BENEFITS_DATA = [
 const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
-    title: "Compila il form",
-    description: "Inserisci i tuoi dati in meno di 2 minuti. Nessun documento richiesto in questa fase.",
-    detailedContent: "Il primo passo è semplicissimo: compila il nostro form online con i tuoi dati personali e lavorativi. Non serve alcun documento in questa fase iniziale - bastano pochi minuti per inserire le informazioni necessarie. Il form è completamente sicuro e i tuoi dati sono protetti. Una volta inviato, la tua richiesta viene immediatamente presa in carico dal nostro team."
+    title: "1. Compila il form",
+    description: "Inserisci i tuoi dati e poche informazioni sulla tua attività.",
+    detailedContent: "Inserisci i tuoi dati e poche informazioni sulla tua attività. Nessun impegno: è solo una richiesta di contatto."
   },
   {
     step: 2,
-    title: "Ricevi la chiamata",
-    description: "Un nostro consulente esperto ti contatterà entro 2 ore per discutere la tua situazione.",
-    detailedContent: "Entro 2 ore dall'invio del form, un nostro consulente esperto ti contatterà telefonicamente. Durante questa chiamata gratuita e senza impegno, avrai l'opportunità di discutere la tua situazione finanziaria, chiarire eventuali dubbi e ricevere una consulenza personalizzata. Il nostro consulente ti guiderà attraverso tutte le opzioni disponibili e ti aiuterà a trovare la soluzione migliore per le tue esigenze."
+    title: "2. Fai una call conoscitiva",
+    description: "Un nostro responsabile ti contatterà per capire come lavori e spiegarti il modello.",
+    detailedContent: "Un nostro responsabile ti contatterà per una video call o telefonata, per capire come lavori e spiegarti modello, prodotti e provvigioni."
   },
   {
     step: 3,
-    title: "Ricevi il denaro",
-    description: "Dopo l'approvazione, ricevi il tuo finanziamento sul conto in 48 ore.",
-    detailedContent: "Dopo l'approvazione della tua richiesta, il finanziamento viene erogato direttamente sul tuo conto corrente in sole 48 ore operative. Non ci sono ritardi o complicazioni: una volta approvato, il denaro arriva velocemente e in modo sicuro. La rata mensile verrà trattenuta direttamente dalla tua busta paga o pensione, senza dover ricordare scadenze o effettuare bonifici manuali."
+    title: "3. Formazione e accredito",
+    description: "Completi la formazione e la prova OAM, poi inizi a collaborare.",
+    detailedContent: "Partecipi a un percorso di formazione di 12 ore, superi una prova finale di 20 domande (minimo 12 risposte corrette) e, una volta accreditato con Creditplan, puoi iniziare a seguire le prime pratiche di credito con il nostro supporto."
   }
 ] as const;
 
@@ -461,7 +469,9 @@ const WhyChooseModal = memo(({
             </svg>
           </div>
           <h2 className="text-3xl font-bold text-slate-900 mb-4">{benefit.title}</h2>
-          <p className="text-lg text-slate-600 leading-relaxed">{benefit.detailedContent}</p>
+          <div className="text-lg text-slate-600 leading-relaxed text-left w-full whitespace-pre-line">
+            {benefit.detailedContent}
+          </div>
         </div>
       </div>
     </div>
@@ -632,7 +642,7 @@ const HowItWorksModal = memo(({
             <span className="text-3xl font-bold text-white">{step.step}</span>
           </div>
           <h2 className="text-3xl font-bold text-slate-900 mb-4">{step.title}</h2>
-          <p className="text-lg text-slate-600 leading-relaxed">{step.detailedContent}</p>
+          <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{step.detailedContent}</p>
         </div>
       </div>
     </div>
@@ -763,9 +773,9 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 px-6 lg:px-12 pt-0 lg:pt-8 pb-20" itemScope itemType="https://schema.org/FinancialProduct">
+      <section className="relative z-10 px-6 lg:px-12 pt-8 lg:pt-12 pb-20" itemScope itemType="https://schema.org/FinancialProduct">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             
             {/* Left: Content */}
             <article className="space-y-8">
@@ -774,27 +784,75 @@ export default function Home() {
               <header className="space-y-4">
                 <h1 className="text-5xl lg:text-7xl font-semibold lg:font-bold leading-[1.05] tracking-tight" itemProp="name">
                   <span className="block bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
-                    Ottieni fino a{' '}
+                    Sei un agente immobiliare?{' '}
                     <span className="relative inline-block">
                       <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent font-extrabold">
-                        75.000€
+                        Diventa consulente del credito
                       </span>
                       <span className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-blue-600/20 blur-xl -z-10 rounded-lg"></span>
                     </span>
                   </span>
                   <span className="block bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
-                    con la cessione del quinto
+                    con Creditplan
                   </span>
                 </h1>
                 <p className="text-xl lg:text-2xl text-slate-600 font-light max-w-xl leading-relaxed" itemProp="description">
-                  Calcola il tuo preventivo in 30 secondi. Zero impegno, 100% online.
+                  Aggiungi mutui e finanziamenti ai tuoi servizi. Ti affidi al nostro backoffice, segui il cliente e incassi provvigioni aggiuntive.
                 </p>
               </header>
             </article>
 
             {/* Right: Form Card + Social Proof */}
             <div className="space-y-6">
+              {/* Text before form */}
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <p className="text-sm font-semibold text-slate-900 mb-4">Compila il form se:</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 mt-1">•</span>
+                    <span>Sei un agente immobiliare o lavori nel real estate</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 mt-1">•</span>
+                    <span>Vuoi aggiungere una linea di business legata a mutui e finanziamenti</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 mt-1">•</span>
+                    <span>Vuoi un confronto senza impegno su provvigioni, modalità di collaborazione e supporto operativo</span>
+                  </li>
+                </ul>
+              </div>
+              
               <FormSection />
+              
+              {/* WhatsApp Contact */}
+              <a 
+                href="https://wa.me/393806913625?text=Ciao%20Rosemary,%20sono%20interessato%20a%20diventare%20consulente%20del%20credito%20con%20Creditplan.%20Vorrei%20ricevere%20maggiori%20informazioni%20sulla%20collaborazione."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 cursor-pointer block"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0">
+                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="#25D366"/>
+                    </svg>
+                  </div>
+                  <p className="text-sm text-slate-700 flex-1">
+                    <span className="font-semibold text-slate-900">Preferisci un contatto veloce?</span> Scrivi subito su WhatsApp a Rosemary: <span className="text-blue-600 font-semibold">380 691 3625</span>
+                  </p>
+                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+              </a>
+              
+              {/* Reassurance Text */}
+              <div className="bg-blue-50/50 rounded-2xl p-6 border border-blue-100">
+                <p className="text-sm text-slate-700 text-center">
+                  <span className="font-semibold text-slate-900">Nessun vincolo e nessun costo:</span> ti contatteremo solo per spiegarti come funziona la collaborazione e valutare se può fare al caso tuo
+                </p>
+              </div>
               
               {/* Google Reviews Social Proof - Debajo del formulario */}
               <button
@@ -835,45 +893,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-10 lg:mb-16">
             <h2 id="why-creditplan-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Perché scegliere Creditplan?
+              Perché collaborare con Creditplan?
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Semplifichiamo ogni aspetto del tuo finanziamento
+              Siamo al fianco degli agenti immobiliari dal 2022. Ora è il momento di offrire TUTTI i servizi ai tuoi clienti.
             </p>
           </header>
 
-          {/* 3 Benefit Cards originales de Hero movidas aquí */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {BENEFITS_DATA.map((benefit, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleBenefitClick(idx)}
-                className="flex flex-col items-start gap-3 p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg cursor-pointer text-left w-full"
-              >
-                <div className={`flex-shrink-0 w-12 h-12 ${
-                  benefit.color === 'blue' ? 'bg-blue-100' : 
-                  benefit.color === 'green' ? 'bg-green-100' : 
-                  benefit.color === 'indigo' ? 'bg-indigo-100' : 
-                  'bg-amber-100'
-                } rounded-xl flex items-center justify-center`}>
-                  <svg className={`w-6 h-6 ${
-                    benefit.color === 'blue' ? 'text-blue-600' : 
-                    benefit.color === 'green' ? 'text-green-600' : 
-                    benefit.color === 'indigo' ? 'text-indigo-600' : 
-                    'text-amber-600'
-                  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-slate-600">{benefit.description}</p>
-                </div>
-              </button>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {WHY_CHOOSE_BENEFITS_DATA.map((benefit, idx) => (
               <button
                 key={idx}
@@ -892,20 +919,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {benefit.description.includes('24 ore') ? (
-                      <>
-                        Approvazione preliminare in sole <span className={`font-bold ${benefit.textColor}`}>24 ore</span> lavorative
-                      </>
-                    ) : benefit.description.includes('Rata fissa') ? (
-                      <>
-                        <span className={`font-bold ${benefit.textColor}`}>Rata fissa</span> e importo costante per tutta la durata
-                      </>
-                    ) : (
-                      <>
-                        <span className={`font-bold ${benefit.textColor}`}>Nessun costo nascosto</span>, istruttoria gratuita e comunicazioni incluse
-                      </>
-                    )}
+                  <p className="text-slate-600 leading-relaxed text-sm">
+                    {benefit.description}
                   </p>
                 </div>
               </button>
@@ -919,10 +934,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-16">
             <h2 id="how-it-works-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4" itemProp="name">
-              Come funziona
+              Come funziona la collaborazione
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto" itemProp="description">
-              Un processo semplice e veloce in soli 3 passaggi
+              Un percorso semplice: in 3 passaggi puoi affiancare il credito alla tua attività di agente immobiliare.
             </p>
           </header>
 
@@ -998,38 +1013,28 @@ export default function Home() {
               <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-500 rounded-3xl p-10 lg:p-12 shadow-2xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
                 <div className="relative">
-                  <div className="inline-flex items-center gap-2 text-sm font-medium text-white bg-white/20 px-4 py-2 rounded-full mb-6">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                      <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
-                    </svg>
-                    <span>Oltre 2.000 famiglie soddisfatte</span>
-                  </div>
                   <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
-                    Pronto a iniziare?
+                    Pronto a fare il salto di qualità?
                   </h2>
                   <p className="text-lg lg:text-xl text-blue-100 mb-8 leading-relaxed">
-                    Unisciti a migliaia di clienti soddisfatti. Il tuo finanziamento è a portata di clic.
+                    Unisciti alla rete di agenti immobiliari che affiancano mutui e finanziamenti. Nessun costo di ingresso, modello chiaro, supporto continuo.
                   </p>
                   <Button 
                     onClick={scrollToForm}
                     className="bg-white text-blue-600 hover:bg-blue-50 h-14 px-8 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                   >
-                    Richiedi subito
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    Richiedi una call di presentazione →
                   </Button>
                   
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-white/20">
                     <div>
-                      <div className="text-3xl font-bold text-white">48h</div>
-                      <div className="text-sm text-blue-100">Tempo medio</div>
+                      <div className="text-3xl font-bold text-white">12h</div>
+                      <div className="text-sm text-blue-100">Formazione iniziale dedicata</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-white">98%</div>
-                      <div className="text-sm text-blue-100">Soddisfazione</div>
+                      <div className="text-3xl font-bold text-white">20</div>
+                      <div className="text-sm text-blue-100">Domande del test di abilitazione</div>
                     </div>
                   </div>
                 </div>
@@ -1163,7 +1168,7 @@ export default function Home() {
               Domande Frequenti
             </h2>
             <p className="text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Tutto quello che devi sapere sulla Cessione del Quinto.
+              Tutto quello che devi sapere sulla collaborazione come Consulente del Credito con Creditplan.
             </p>
           </header>
 
@@ -1190,19 +1195,16 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 mb-1.5 sm:mb-2">
-                  Hai altre domande?
+                  Hai ancora domande sulla collaborazione?
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">
-                  I nostri consulenti sono pronti ad aiutarti. Nessun impegno, consulenza gratuita.
+                  Un nostro responsabile è a tua disposizione per chiarire percorso formativo, prova OAM, modalità operative e provvigioni. Nessun impegno.
                 </p>
                 <Button 
                   onClick={scrollToForm}
                   className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 h-10 sm:h-12 px-6 sm:px-8 text-sm sm:text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  Richiedi una consulenza gratuita
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                  Richiedi una call di presentazione →
                 </Button>
               </div>
             </div>

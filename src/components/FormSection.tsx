@@ -11,28 +11,15 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
-  nome: z.string().min(2, "Il nome deve contenere almeno 2 caratteri"),
-  cognome: z.string().min(2, "Il cognome deve contenere almeno 2 caratteri"),
-  mail: z.string().email("Inserisci un indirizzo email valido"),
+  nomeCognome: z.string().min(2, "Il nome e cognome devono contenere almeno 2 caratteri"),
+  email: z.string().email("Inserisci un indirizzo email valido"),
   telefono: z.string().min(10, "Il numero di telefono deve contenere almeno 10 cifre"),
-  impiego: z.string().min(1, "Seleziona il tuo impiego"),
-  nettoMensile: z.string().min(1, "Inserisci il tuo reddito netto mensile").refine(
-    (val) => !isNaN(Number(val)) && Number(val) > 0,
-    "Inserisci un importo valido"
-  ),
-  importoRichiesto: z.string().min(1, "Inserisci l'importo richiesto").refine(
-    (val) => !isNaN(Number(val)) && Number(val) > 0,
-    "Inserisci un importo valido"
-  ),
+  citta: z.string().min(1, "Inserisci la città in cui operi"),
+  provincia: z.string().min(1, "Inserisci la provincia"),
+  agenteImmobiliare: z.string().min(1, "Seleziona se sei un agente immobiliare"),
+  domande: z.string().optional(),
 });
 
-const IMPIEGO_OPTIONS = [
-  "Dipendente statale",
-  "Dipendente Pubblico",
-  "Dipendente Parapubblico",
-  "Dipendente azienda privata con più di 16 impiegati",
-  "Pensionato",
-] as const;
 
 export function FormSection() {
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -43,22 +30,27 @@ export function FormSection() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      nome: "",
-      cognome: "",
-      mail: "",
+      nomeCognome: "",
+      email: "",
       telefono: "",
-      impiego: "",
-      nettoMensile: "",
-      importoRichiesto: "",
+      citta: "",
+      provincia: "",
+      agenteImmobiliare: "",
+      domande: "",
     },
   });
 
   const onNext = async () => {
-    const isValid = await form.trigger(['nome', 'cognome', 'mail', 'telefono']);
+    const isValid = await form.trigger(['nomeCognome', 'email', 'telefono']);
     if (isValid) {
       setCurrentStep(2);
       setSubmitError(null);
     }
+  };
+
+  const onBack = () => {
+    setCurrentStep(1);
+    setSubmitError(null);
   };
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
@@ -67,13 +59,13 @@ export function FormSection() {
 
     try {
       const payload = {
-        nome: values.nome,
-        cognome: values.cognome,
-        mail: values.mail,
+        nomeCognome: values.nomeCognome,
+        email: values.email,
         telefono: values.telefono,
-        impiego: values.impiego,
-        nettoMensile: Number(values.nettoMensile),
-        importoRichiesto: Number(values.importoRichiesto),
+        citta: values.citta,
+        provincia: values.provincia,
+        agenteImmobiliare: values.agenteImmobiliare,
+        domande: values.domande || "",
         submittedAt: new Date().toISOString(),
       };
 
@@ -103,6 +95,7 @@ export function FormSection() {
     }
   };
 
+
   return (
     <div className="relative" id="form-section">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl opacity-10"></div>
@@ -112,12 +105,10 @@ export function FormSection() {
         <CardHeader className="space-y-3 pb-6">
           <div className="text-center">
             <CardTitle className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
-              {currentStep === 1 ? "Richiedi informazioni" : "Quasi fatto!"}
+              Richiedi informazioni
             </CardTitle>
             <p className="text-sm lg:text-base text-slate-600">
-              {currentStep === 1 
-                ? "Compila il form per essere ricontattato" 
-                : "Inserisci i dati per calcolare la tua rata"}
+              Compila il form per essere ricontattato in 24h
             </p>
           </div>
         </CardHeader>
@@ -148,155 +139,165 @@ export function FormSection() {
           )}
 
           <Form {...form}>
-            {currentStep === 1 ? (
-              <div className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="nome"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Nome</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Inserisci il tuo nome" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+            <div className="relative overflow-hidden">
+              {/* Step 1 */}
+              <div
+                className={`transition-all duration-500 ease-in-out ${
+                  currentStep === 1
+                    ? 'opacity-100 translate-x-0 relative'
+                    : 'opacity-0 -translate-x-full absolute inset-0 pointer-events-none'
+                }`}
+              >
+                <form className="space-y-4">
+                  <FormField
+                    control={form.control}
+                    name="nomeCognome"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Nome e cognome</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Inserisci nome e cognome" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="cognome"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Cognome</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Inserisci il tuo cognome" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="Inserisci la tua email" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="mail"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="Inserisci la tua email" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    control={form.control}
+                    name="telefono"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Numero di telefono</FormLabel>
+                        <FormControl>
+                          <Input type="tel" placeholder="Inserisci il tuo telefono" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="telefono"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Telefono</FormLabel>
-                      <FormControl>
-                        <Input type="tel" placeholder="Inserisci il tuo telefono" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button
-                  type="button"
-                  onClick={onNext}
-                  className="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg"
-                >
-                  Ottieni il Preventivo Gratuito →
-                </Button>
-              </div>
-            ) : (
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="impiego"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Impiego</FormLabel>
-                      <FormControl>
-                        <select
-                          {...field}
-                          className="flex h-12 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        >
-                          <option value="">Impiego</option>
-                          {IMPIEGO_OPTIONS.map((option) => (
-                            <option key={option} value={option}>
-                              {option}
-                            </option>
-                          ))}
-                        </select>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="nettoMensile"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Netto mensile</FormLabel>
-                      <FormControl>
-                        <Input 
-                          type="number" 
-                          placeholder="Es. 1500" 
-                          {...field}
-                          onChange={(e) => field.onChange(e.target.value)}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="importoRichiesto"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Importo richiesto</FormLabel>
-                      <FormControl>
-                        <Input 
-                          type="number" 
-                          placeholder="Es. 25000" 
-                          {...field}
-                          onChange={(e) => field.onChange(e.target.value)}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <div className="flex gap-3">
                   <Button
                     type="button"
-                    onClick={() => setCurrentStep(1)}
-                    variant="outline"
-                    className="flex-1 h-12"
+                    onClick={onNext}
+                    className="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg"
                   >
-                    Indietro
+                    Continua →
                   </Button>
-                  <Button
-                    type="submit"
-                    disabled={isLoading}
-                    className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg"
-                  >
-                    {isLoading ? "Invio in corso..." : "Calcola la Tua Rata →"}
-                  </Button>
-                </div>
-              </form>
-            )}
+                </form>
+              </div>
+
+              {/* Step 2 */}
+              <div
+                className={`transition-all duration-500 ease-in-out ${
+                  currentStep === 2
+                    ? 'opacity-100 translate-x-0 relative'
+                    : 'opacity-0 translate-x-full absolute inset-0 pointer-events-none'
+                }`}
+              >
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <FormField
+                    control={form.control}
+                    name="citta"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Città in cui operi</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Inserisci la città" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="provincia"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Provincia</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Inserisci la provincia" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="agenteImmobiliare"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Sei un agente immobiliare?</FormLabel>
+                        <FormControl>
+                          <select
+                            {...field}
+                            className="flex h-12 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          >
+                            <option value="">Seleziona</option>
+                            <option value="si">Si</option>
+                            <option value="no">No</option>
+                          </select>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="domande"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Scrivi se hai domande o se vuoi indicarci qualcosa sulla tua attività</FormLabel>
+                        <FormControl>
+                          <textarea
+                            {...field}
+                            rows={4}
+                            className="flex w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            placeholder="Scrivi qui le tue domande o informazioni sulla tua attività..."
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className="flex gap-3">
+                    <Button
+                      type="button"
+                      onClick={onBack}
+                      variant="outline"
+                      className="flex-1 h-12 transition-transform hover:scale-[1.02]"
+                    >
+                      ← Indietro
+                    </Button>
+                    <Button
+                      type="submit"
+                      disabled={isLoading}
+                      className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg transition-transform hover:scale-[1.02]"
+                    >
+                      {isLoading ? "Invio in corso..." : "INVIA"}
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </Form>
         </CardContent>
       </Card>
