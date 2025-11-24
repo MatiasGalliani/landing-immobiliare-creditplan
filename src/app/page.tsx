@@ -716,7 +716,7 @@ export default function Home() {
   const selectedStep = openHowItWorksIndex !== null ? HOW_IT_WORKS_STEPS[openHowItWorksIndex] : null;
 
   return (
-    <main className="min-h-screen relative overflow-hidden" itemScope itemType="https://schema.org/WebPage">
+    <main className="min-h-screen relative overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
       <StructuredData />
 
       {/* Header */}
@@ -983,13 +983,13 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-20">
+      <section className="relative z-10 px-4 sm:px-6 lg:px-12 py-12 sm:py-20 overflow-x-hidden">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
             {/* Left: Image */}
-            <div className="relative lg:order-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl blur-2xl opacity-20"></div>
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative lg:order-1 w-full">
+              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl blur-2xl opacity-20"></div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full">
                 <Image
                   src="https://creditplan.it/wp-content/uploads/2023/02/03_CSQ.jpg"
                   alt="Famiglia soddisfatta con Creditplan - Cessione del quinto per realizzare i propri progetti"
@@ -1009,32 +1009,32 @@ export default function Home() {
             </div>
 
             {/* Right: CTA Content */}
-            <div className="lg:order-2">
-              <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-500 rounded-3xl p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+            <div className="lg:order-2 w-full">
+              <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-500 rounded-3xl p-6 sm:p-8 lg:p-10 xl:p-12 shadow-2xl relative overflow-hidden w-full">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
-                <div className="relative">
-                  <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
+                <div className="relative w-full">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
                     Pronto a fare il salto di qualità?
                   </h2>
-                  <p className="text-lg lg:text-xl text-blue-100 mb-8 leading-relaxed">
+                  <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed">
                     Unisciti alla rete di agenti immobiliari che affiancano mutui e finanziamenti. Nessun costo di ingresso, modello chiaro, supporto continuo.
                   </p>
                   <Button 
                     onClick={scrollToForm}
-                    className="bg-white text-blue-600 hover:bg-blue-50 h-14 px-8 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                    className="bg-white text-blue-600 hover:bg-blue-50 h-12 sm:h-14 px-4 sm:px-6 lg:px-8 text-sm sm:text-base lg:text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto whitespace-normal sm:whitespace-nowrap"
                   >
                     Richiedi una call di presentazione →
                   </Button>
                   
                   {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-white/20">
+                  <div className="grid grid-cols-2 gap-4 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/20">
                     <div>
-                      <div className="text-3xl font-bold text-white">12h</div>
-                      <div className="text-sm text-blue-100">Formazione iniziale dedicata</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-white">12h</div>
+                      <div className="text-xs sm:text-sm text-blue-100">Formazione iniziale dedicata</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-white">20</div>
-                      <div className="text-sm text-blue-100">Domande del test di abilitazione</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-white">20</div>
+                      <div className="text-xs sm:text-sm text-blue-100">Domande del test di abilitazione</div>
                     </div>
                   </div>
                 </div>
