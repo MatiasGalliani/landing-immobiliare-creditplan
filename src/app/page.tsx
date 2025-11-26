@@ -123,14 +123,14 @@ const BENEFITS_DATA = [
     color: "green",
     title: "100% sicuro",
     description: "Certificato e garantito",
-    detailedContent: "La cessione del quinto è un prodotto finanziario completamente sicuro e garantito. La trattenuta diretta in busta paga o pensione offre massima sicurezza sia per te che per l'istituto erogante. Siamo iscritti al registro OAM M30 e operiamo in totale trasparenza."
+    detailedContent: "I prodotti finanziari che offrirai sono completamente sicuri e garantiti. Le convenzioni bancarie e il supporto del nostro backoffice garantiscono massima sicurezza sia per te che per i tuoi clienti. Siamo iscritti al registro OAM M30 e operiamo in totale trasparenza."
   },
   {
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
     color: "indigo",
     title: "Tasso fisso",
     description: "Rata fissa e importo costante",
-    detailedContent: "Con la cessione del quinto, il tasso di interesse è fisso per tutta la durata del finanziamento. Questo significa che la tua rata mensile rimane sempre la stessa, senza sorprese o variazioni, permettendoti di pianificare le tue spese con totale tranquillità."
+    detailedContent: "I prodotti finanziari che potrai offrire includono mutui e finanziamenti con tassi competitivi. Il nostro backoffice ti supporta nella scelta del prodotto migliore per ogni cliente, garantendo trasparenza e chiarezza in ogni fase del processo."
   }
 ] as const;
 
@@ -375,7 +375,7 @@ const BenefitModal = memo(({
       }}
     >
       <div 
-        className={`relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 border-2 ${borderClass}`}
+        className={`relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-lg w-full p-4 sm:p-6 lg:p-8 border-2 ${borderClass}`}
         onClick={(e) => e.stopPropagation()}
         style={{
           animation: 'slideUpAndScale 0.3s ease-out'
@@ -384,23 +384,23 @@ const BenefitModal = memo(({
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
           aria-label="Chiudi"
         >
-          <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
         {/* Content */}
         <div className="flex flex-col items-center text-center">
-          <div className={`w-16 h-16 ${bgClass} rounded-2xl flex items-center justify-center mb-6`}>
-            <svg className={`w-8 h-8 ${textClass}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ${bgClass} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6`}>
+            <svg className={`w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 ${textClass}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
             </svg>
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">{benefit.title}</h2>
-          <p className="text-lg text-slate-600 leading-relaxed">{benefit.detailedContent}</p>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">{benefit.title}</h2>
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">{benefit.detailedContent}</p>
         </div>
       </div>
     </div>
@@ -444,7 +444,7 @@ const WhyChooseModal = memo(({
       }}
     >
       <div 
-        className={`relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 border-2 ${benefit.borderColor}`}
+        className={`relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-lg w-full p-4 sm:p-6 lg:p-8 border-2 ${benefit.borderColor}`}
         onClick={(e) => e.stopPropagation()}
         style={{
           animation: 'slideUpAndScale 0.3s ease-out'
@@ -453,23 +453,23 @@ const WhyChooseModal = memo(({
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
           aria-label="Chiudi"
         >
-          <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
         {/* Content */}
         <div className="flex flex-col items-center text-center">
-          <div className={`w-16 h-16 bg-gradient-to-br ${benefit.gradientFrom} ${benefit.gradientTo} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${benefit.gradientFrom} ${benefit.gradientTo} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg`}>
+            <svg className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
             </svg>
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">{benefit.title}</h2>
-          <div className="text-lg text-slate-600 leading-relaxed text-left w-full whitespace-pre-line">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">{benefit.title}</h2>
+          <div className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed text-left w-full whitespace-pre-line">
             {benefit.detailedContent}
           </div>
         </div>
@@ -513,7 +513,7 @@ const ReviewsModal = memo(({
       }}
     >
       <div 
-        className="relative bg-white rounded-3xl shadow-2xl max-w-4xl w-full p-8 border-2 border-blue-200 my-8"
+        className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-4xl w-full p-4 sm:p-6 lg:p-8 border-2 border-blue-200 my-4 sm:my-8"
         onClick={(e) => e.stopPropagation()}
         style={{
           animation: 'slideUpAndScale 0.3s ease-out'
@@ -522,58 +522,58 @@ const ReviewsModal = memo(({
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors z-10"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors z-10"
           aria-label="Chiudi"
         >
-          <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
         {/* Header */}
-        <div className="flex items-center gap-4 mb-8 pb-6 border-b border-slate-200">
-          <div className="flex items-center gap-3">
-            <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
+        <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-8 pb-4 sm:pb-6 border-b border-slate-200">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" viewBox="0 0 48 48" fill="none">
               <path d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFC107"/>
               <path d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z" fill="#FF3D00"/>
               <path d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" fill="#4CAF50"/>
               <path d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z" fill="#1976D2"/>
             </svg>
             <div>
-              <h2 className="text-3xl font-bold text-slate-900">ECCELLENTE</h2>
-              <div className="flex items-center gap-2 mt-1">
-                <div className="flex items-center gap-1">
+              <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-slate-900">ECCELLENTE</h2>
+              <div className="flex items-center gap-1 sm:gap-2 mt-0.5 sm:mt-1 flex-wrap">
+                <div className="flex items-center gap-0.5 sm:gap-1">
                   {STAR_RATINGS.map((i) => (
-                    <svg key={i} className="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                    <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
                       <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                     </svg>
                   ))}
                 </div>
-                <span className="text-lg font-semibold text-slate-900">4.9/5</span>
-                <span className="text-sm text-slate-600">• 98 recensioni su Google</span>
+                <span className="text-sm sm:text-base lg:text-lg font-semibold text-slate-900">4.9/5</span>
+                <span className="text-xs sm:text-sm text-slate-600">• 98 recensioni su Google</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Reviews List */}
-        <div className="space-y-6 max-h-[60vh] overflow-y-auto pr-2">
+        <div className="space-y-4 sm:space-y-6 max-h-[60vh] overflow-y-auto pr-1 sm:pr-2">
           {GOOGLE_REVIEWS.map((review, index) => (
-            <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <div className="flex items-start justify-between mb-3">
+            <div key={index} className="bg-slate-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-slate-200">
+              <div className="flex items-start justify-between mb-2 sm:mb-3">
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-1">{review.author}</h3>
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-0.5 sm:mb-1">{review.author}</h3>
                   <p className="text-xs text-slate-500">{review.timeAgo}</p>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-0.5 sm:gap-1">
                   {Array.from({ length: review.rating }).map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
+                    <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
                       <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                     </svg>
                   ))}
                 </div>
               </div>
-              <p className="text-slate-700 leading-relaxed">{review.text}</p>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">{review.text}</p>
             </div>
           ))}
         </div>
@@ -619,7 +619,7 @@ const HowItWorksModal = memo(({
       }}
     >
       <div 
-        className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 border-2 border-blue-200"
+        className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-lg w-full p-4 sm:p-6 lg:p-8 border-2 border-blue-200"
         onClick={(e) => e.stopPropagation()}
         style={{
           animation: 'slideUpAndScale 0.3s ease-out'
@@ -628,21 +628,21 @@ const HowItWorksModal = memo(({
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
           aria-label="Chiudi"
         >
-          <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
         {/* Content */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-            <span className="text-3xl font-bold text-white">{step.step}</span>
+          <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg">
+            <span className="text-2xl sm:text-3xl font-bold text-white">{step.step}</span>
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">{step.title}</h2>
-          <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">{step.detailedContent}</p>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">{step.title}</h2>
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed whitespace-pre-line">{step.detailedContent}</p>
         </div>
       </div>
     </div>
@@ -726,7 +726,7 @@ export default function Home() {
             <div className="flex flex-col md:block">
               <Image
                 src="https://creditplan.it/wp-content/uploads/2023/02/LOGO-CREDITPLAN.png"
-                alt="Creditplan - Logo aziendale servizi di mediazione creditizia per cessione del quinto"
+                alt="Creditplan - Logo aziendale servizi di mediazione creditizia per agenti immobiliari"
                 width={280}
                 height={96}
                 quality={60}
@@ -942,17 +942,17 @@ export default function Home() {
           </header>
 
           {/* Trust Image */}
-          <div className="max-w-xl mx-auto">
+          <div className="max-w-md mx-auto">
             <Image
-              src="https://creditplan.it/wp-content/uploads/2025/11/Progetto-senza-titolo-3.png"
-              alt="Come funziona la cessione del quinto con Creditplan - Processo in 3 semplici passaggi"
+              src="https://creditplan.it/wp-content/uploads/2023/02/foto-home-Chi-siamo.png"
+              alt="Come funziona la collaborazione con Creditplan - Processo in 3 semplici passaggi per agenti immobiliari"
               width={600}
               height={300}
               quality={60}
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
               className="w-full h-auto object-cover rounded-xl"
             />
           </div>
@@ -991,8 +991,8 @@ export default function Home() {
               <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl blur-2xl opacity-20"></div>
               <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full">
                 <Image
-                  src="https://creditplan.it/wp-content/uploads/2023/02/03_CSQ.jpg"
-                  alt="Famiglia soddisfatta con Creditplan - Cessione del quinto per realizzare i propri progetti"
+                  src="https://creditplan.it/wp-content/uploads/2023/02/01_Mutui.jpg"
+                  alt="Famiglia soddisfatta con Creditplan - Servizi integrati immobiliare e credito"
                   width={800}
                   height={600}
                   quality={60}
@@ -1062,7 +1062,7 @@ export default function Home() {
             <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px]">
               <Image
                 src="https://upload.wikimedia.org/wikipedia/commons/7/79/Banca_Sistema_logo.svg"
-                alt="Banca Sistema - Partner bancario Creditplan per cessione del quinto"
+                alt="Banca Sistema - Partner bancario Creditplan per mutui e finanziamenti"
                 width={200}
                 height={80}
                 className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1086,7 +1086,7 @@ export default function Home() {
             <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px]">
               <Image
                 src="https://www.fincontinuo.com/hubfs/fincontinuo-logo.svg"
-                alt="Fincontinuo - Partner finanziario Creditplan per cessione del quinto"
+                alt="Fincontinuo - Partner finanziario Creditplan per mutui e finanziamenti"
                 width={200}
                 height={80}
                 className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1112,7 +1112,7 @@ export default function Home() {
               <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px] w-full sm:w-auto sm:min-w-[200px]">
                 <Image
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2_zu4rkVrkobpR88917ZnpI4RPD3zz3tXRw&s"
-                  alt="Partner bancario convenzionato Creditplan per cessione del quinto"
+                  alt="Partner bancario convenzionato Creditplan per mutui e finanziamenti"
                   width={200}
                   height={80}
                   className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -1124,7 +1124,7 @@ export default function Home() {
               <div className="group relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-blue-300 flex items-center justify-center min-h-[120px] w-full sm:w-auto sm:min-w-[200px]">
                 <Image
                   src="https://thebanks.eu/img/logos/IBL_Banca.png"
-                  alt="IBL Banca - Partner bancario Creditplan per cessione del quinto e prestiti"
+                  alt="IBL Banca - Partner bancario Creditplan per mutui, finanziamenti e prestiti"
                   width={200}
                   height={80}
                   className="w-full h-auto max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"

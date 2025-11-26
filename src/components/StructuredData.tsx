@@ -14,7 +14,7 @@ export function StructuredData() {
       "alternateName": "Creditplan",
       "url": siteUrl,
       "logo": `${siteUrl}/logo.png`,
-      "description": "Servizi di mediazione creditizia per cessione del quinto, prestiti personali e finanziamenti per dipendenti e pensionati.",
+      "description": "Formazione e supporto per agenti immobiliari che vogliono diventare consulenti del credito. Collaborazione attiva dal 2022 con formazione dedicata, backoffice e convenzioni bancarie.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IT",
@@ -32,7 +32,7 @@ export function StructuredData() {
         "@type": "Country",
         "name": "Italy"
       },
-      "serviceType": "Mediazione Creditizia",
+      "serviceType": "Formazione e Consulenza Creditizia",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -45,13 +45,16 @@ export function StructuredData() {
     // Product/Service Schema
     const productSchema = {
       "@context": "https://schema.org",
-      "@type": "FinancialProduct",
-      "name": "Cessione del Quinto",
-      "description": "Prestito personale garantito con trattenuta diretta in busta paga o pensione. Importo massimo 75.000€, erogazione in 48 ore, istruttoria gratuita.",
+      "@type": "EducationalOccupationalCredential",
+      "name": "Consulente del Credito - Formazione e Accreditamento",
+      "description": "Programma di formazione per agenti immobiliari che vogliono diventare consulenti del credito. Formazione di 12 ore, prova OAM, supporto continuo e convenzioni bancarie.",
       "provider": {
         "@type": "FinancialService",
         "name": "Creditplan"
       },
+      "credentialCategory": "Professional Certification",
+      "competencyRequired": "Agente Immobiliare",
+      "educationalLevel": "Professional Training",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "EUR",
@@ -64,7 +67,7 @@ export function StructuredData() {
         },
         "availability": "https://schema.org/InStock",
         "url": siteUrl,
-        "validFrom": "2025-01-01"
+        "validFrom": "2022-01-01"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -72,12 +75,12 @@ export function StructuredData() {
         "reviewCount": "2000"
       },
       "featureList": [
-        "Erogazione in 48 ore",
-        "Istruttoria gratuita",
-        "Approvazione in 24 ore",
-        "Nessun garante richiesto",
-        "Rata fissa",
-        "Trasparenza totale"
+        "Formazione di 12 ore",
+        "Prova OAM inclusa",
+        "Supporto continuo",
+        "Backoffice dedicato",
+        "Convenzioni bancarie",
+        "Provvigioni competitive"
       ]
     };
 
@@ -88,82 +91,66 @@ export function StructuredData() {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Cos'è la Cessione del Quinto?",
+          "name": "Chi può candidarsi per collaborare con Creditplan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La cessione del quinto è un prestito garantito con trattenuta diretta in busta paga o sulla pensione. Può essere richiesto senza dovere fornire motivazioni e l'importo massimo della rata non può eccedere il 20% dello stipendio netto mensile (un quinto)."
+            "text": "Cerchiamo in primo luogo agenti immobiliari e professionisti che lavorano già a contatto con chi compra o vende casa (titolari d'agenzia, collaboratori, procacciatori, consulenti). Valutiamo anche profili affini del mondo finanziario/assicurativo, purché ci sia mentalità commerciale, organizzazione e serietà professionale."
           }
         },
         {
           "@type": "Question",
-          "name": "Quali sono i costi e le commissioni associate?",
+          "name": "Devo lasciare la mia agenzia o il mio lavoro attuale?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nessun costo o commissioni accessorie; l'importo richiesto viene erogato \"chiavi in mano\"."
+            "text": "No. La collaborazione con Creditplan è pensata come linea di business aggiuntiva, perfettamente compatibile con la tua attività di agente immobiliare. Continui a fare il tuo lavoro, ma in più puoi offrire mutui, finanziamenti, cessioni del quinto e altri prodotti di credito ai clienti che già segui."
           }
         },
         {
           "@type": "Question",
-          "name": "Quanto tempo serve per ottenere il prestito?",
+          "name": "Il cliente resta \"mio\" o passa a voi?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Con Creditplan puoi ottenere la liquidità necessaria in pochi giorni grazie ai nostri partner bancari specializzati e al team qualificato."
+            "text": "Il cliente resta sempre tuo. Tu sei il riferimento principale per chi compra o vende l'immobile. Noi mettiamo a disposizione backoffice, convenzioni bancarie e competenze sul credito, ma non entriamo in concorrenza sull'aspetto immobiliare. L'obiettivo è farti fare più servizio e più provvigioni, non toglierti clienti."
           }
         },
         {
           "@type": "Question",
-          "name": "Quali requisiti devo avere per richiedere la Cessione del Quinto?",
+          "name": "Che tipo di formazione è prevista? Quanto dura?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Puoi richiedere la Cessione del Quinto se sei un lavoratore dipendente (pubblico/statale o privato) con contratto a tempo indeterminato o un pensionato. Non è richiesto alcun garante."
+            "text": "È necessario seguire un percorso formativo riconosciuto (circa 12 ore di video-lezioni) erogato da una società esterna. Puoi scegliere l'ente formatore o seguire uno dei percorsi da noi consigliati. Al termine riceverai l'attestato necessario per accedere alla prova OAM."
           }
         },
         {
           "@type": "Question",
-          "name": "Esiste un limite massimo di età per la Cessione del Quinto?",
+          "name": "In cosa consiste la prova valutativa OAM?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sì, i pensionati possono ottenere il prestito fino a 89 anni alla scadenza del finanziamento."
+            "text": "La prova OAM si svolge online e consiste in 20 domande a risposta multipla. Devi rispondere correttamente ad almeno 12 domande su 20 per superarla. Superato l'esame, sarai accreditato con Creditplan e potrai iniziare a collaborare con il nostro supporto."
           }
         },
         {
           "@type": "Question",
-          "name": "Cosa succede se non raggiungo i requisiti per rinnovare una Cessione del Quinto già in corso?",
+          "name": "Quanto posso guadagnare con questa collaborazione?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "In caso di mancato raggiungimento dei termini per il rinnovo, possiamo valutare insieme la Delegazione di Pagamento, una seconda trattenuta sullo stipendio che permette di ottenere ulteriore liquidità."
+            "text": "Provvigioni variabili legate alle operazioni concluse (mutui, finanziamenti, prestiti, cessioni del quinto). Più clienti porti e più operazioni vanno a buon fine, più cresce il tuo reddito aggiuntivo. Durante la call ti spiegheremo la struttura provvigionale e faremo simulazioni concrete."
           }
         },
         {
           "@type": "Question",
-          "name": "Perché dovrei scegliere Creditplan?",
+          "name": "Ci sono costi di ingresso, fee o vincoli di esclusiva?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Le nostre convenzioni bancarie con i primari partner sul mercato, ci permettono di avere tassi competitivi e tempi rapidi di erogazione."
+            "text": "Non applichiamo fee di ingresso o canoni di affiliazione per la collaborazione con Creditplan. Gli unici costi da considerare sono quelli legati al percorso formativo esterno e alla prova OAM, gestiti dagli enti preposti. Ci aspettiamo però serietà, continuità minima e rispetto delle procedure."
           }
         },
         {
           "@type": "Question",
-          "name": "Posso richiedere il prestito se sono stato segnalato come cattivo pagatore?",
+          "name": "In quanto tempo posso essere operativo dopo la candidatura?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sì, la Cessione del Quinto è accessibile anche in caso di segnalazioni o protesti, in quanto non tiene conto delle segnalazioni nelle banche dati pubbliche."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "È possibile estinguere anticipatamente la Cessione del Quinto?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sì, puoi estinguere anticipatamente il prestito in qualsiasi momento beneficiando dello storno degli interessi futuri dovuti."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quanto costa la consulenza con Creditplan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nessun costo accessorio."
+            "text": "Il percorso prevede: candidatura, call conoscitiva, corso di formazione (12h), prova OAM e accredito. I tempi dipendono dalla velocità con cui completi corso e prova, ma in genere in poche settimane puoi essere operativo."
           }
         }
       ]
@@ -183,8 +170,8 @@ export function StructuredData() {
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Cessione del Quinto",
-          "item": `${siteUrl}/cessione-del-quinto`
+          "name": "Diventa Consulente del Credito",
+          "item": `${siteUrl}/diventa-consulente-del-credito`
         }
       ]
     };
@@ -193,8 +180,8 @@ export function StructuredData() {
     const webPageSchema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Cessione del Quinto in 48 Ore | Prestito fino a 75.000€ | Creditplan",
-      "description": "Ottieni fino a 75.000€ con la cessione del quinto in sole 48 ore. Processo rapido, sicuro e completamente digitale.",
+      "name": "Diventa Consulente del Credito | Collabora con Creditplan | Agenti Immobiliari",
+      "description": "Sei un agente immobiliare? Diventa consulente del credito con Creditplan. Aggiungi mutui e finanziamenti ai tuoi servizi. Formazione dedicata, supporto continuo, provvigioni competitive.",
       "url": siteUrl,
       "inLanguage": "it-IT",
       "isPartOf": {
@@ -203,8 +190,8 @@ export function StructuredData() {
         "url": siteUrl
       },
       "about": {
-        "@type": "FinancialProduct",
-        "name": "Cessione del Quinto"
+        "@type": "EducationalOccupationalCredential",
+        "name": "Consulente del Credito"
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
@@ -218,7 +205,7 @@ export function StructuredData() {
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Mediazione Creditizia - Cessione del Quinto",
+      "serviceType": "Formazione Consulenti del Credito per Agenti Immobiliari",
       "provider": {
         "@type": "FinancialService",
         "name": "Creditplan"
@@ -235,16 +222,16 @@ export function StructuredData() {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Cessione del Quinto per Dipendenti",
-              "description": "Prestito per dipendenti pubblici e privati"
+              "name": "Formazione Consulente del Credito",
+              "description": "Corso di formazione di 12 ore per diventare consulente del credito"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Cessione del Quinto per Pensionati",
-              "description": "Prestito per pensionati fino a 89 anni"
+              "name": "Supporto e Backoffice",
+              "description": "Backoffice dedicato e convenzioni bancarie per agenti immobiliari"
             }
           }
         ]
@@ -255,32 +242,32 @@ export function StructuredData() {
     const howToSchema = {
       "@context": "https://schema.org",
       "@type": "HowTo",
-      "name": "Come richiedere la Cessione del Quinto",
-      "description": "Guida passo-passo per richiedere la cessione del quinto con Creditplan",
+      "name": "Come diventare Consulente del Credito con Creditplan",
+      "description": "Guida passo-passo per agenti immobiliari che vogliono diventare consulenti del credito",
       "step": [
         {
           "@type": "HowToStep",
           "position": 1,
           "name": "Compila il form",
-          "text": "Inserisci i tuoi dati in meno di 2 minuti. Nessun documento richiesto in questa fase.",
+          "text": "Inserisci i tuoi dati e poche informazioni sulla tua attività. Nessun impegno: è solo una richiesta di contatto.",
           "image": `${siteUrl}/step1.jpg`
         },
         {
           "@type": "HowToStep",
           "position": 2,
-          "name": "Ricevi la chiamata",
-          "text": "Un nostro consulente esperto ti contatterà entro 2 ore per discutere la tua situazione.",
+          "name": "Fai una call conoscitiva",
+          "text": "Un nostro responsabile ti contatterà per capire come lavori e spiegarti il modello, prodotti e provvigioni.",
           "image": `${siteUrl}/step2.jpg`
         },
         {
           "@type": "HowToStep",
           "position": 3,
-          "name": "Ricevi il denaro",
-          "text": "Dopo l'approvazione, ricevi il tuo finanziamento sul conto in 48 ore.",
+          "name": "Formazione e accredito",
+          "text": "Completi la formazione di 12 ore, superi la prova OAM e inizi a collaborare con il nostro supporto.",
           "image": `${siteUrl}/step3.jpg`
         }
       ],
-      "totalTime": "PT48H"
+      "totalTime": "P2W"
     };
 
     // Add all schemas to the page
