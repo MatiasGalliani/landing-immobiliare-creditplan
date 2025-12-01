@@ -69,7 +69,7 @@ export function FormSection() {
         submittedAt: new Date().toISOString(),
       };
 
-      const response = await fetch('/api/forms/quinto-pensionati-leads', {
+      const response = await fetch('/api/forms/immobiliare', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
