@@ -217,7 +217,7 @@ export function FormSection() {
                       <FormItem>
                         <FormLabel>Città in cui operi</FormLabel>
                         <FormControl>
-                          <Input placeholder="Inserisci la città" {...field} />
+                          <Input placeholder="Inserisci la città" {...field} disabled={isLoading} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -231,7 +231,7 @@ export function FormSection() {
                       <FormItem>
                         <FormLabel>Provincia</FormLabel>
                         <FormControl>
-                          <Input placeholder="Inserisci la provincia" {...field} />
+                          <Input placeholder="Inserisci la provincia" {...field} disabled={isLoading} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -247,6 +247,7 @@ export function FormSection() {
                         <FormControl>
                           <select
                             {...field}
+                            disabled={isLoading}
                             className="flex h-12 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           >
                             <option value="">Seleziona</option>
@@ -269,6 +270,7 @@ export function FormSection() {
                           <textarea
                             {...field}
                             rows={4}
+                            disabled={isLoading}
                             className="flex w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             placeholder="Scrivi qui le tue domande o informazioni sulla tua attività..."
                           />
@@ -283,15 +285,38 @@ export function FormSection() {
                       type="button"
                       onClick={onBack}
                       variant="outline"
-                      className="flex-1 h-12 transition-transform hover:scale-[1.02]"
+                      disabled={isLoading}
+                      className="flex-1 h-12 transition-transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       ← Indietro
                     </Button>
                     <Button
                       type="submit"
                       disabled={isLoading}
-                      className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg transition-transform hover:scale-[1.02]"
+                      className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg transition-transform hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
+                      {isLoading && (
+                        <svg
+                          className="animate-spin h-5 w-5 text-white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                      )}
                       {isLoading ? "Invio in corso..." : "INVIA"}
                     </Button>
                   </div>

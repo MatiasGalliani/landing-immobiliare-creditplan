@@ -42,8 +42,8 @@ const FAQ_ITEMS = [
     answer: "Provvigioni variabili legate alle operazioni concluse (mutui, finanziamenti, prestiti, cessioni del quinto). Più clienti porti e più operazioni vanno a buon fine, più cresce il tuo reddito aggiuntivo. Durante la call ti spiegheremo la struttura provvigionale e faremo simulazioni concrete."
   },
   {
-    question: "Ci sono costi di ingresso, fee o vincoli di esclusiva?",
-    answer: "Non applichiamo fee di ingresso o canoni di affiliazione per la collaborazione con Creditplan. Gli unici costi da considerare sono quelli legati al percorso formativo esterno e alla prova OAM, gestiti dagli enti preposti. Ci aspettiamo però serietà, continuità minima e rispetto delle procedure. Eventuali condizioni su esclusiva di zona o modalità specifiche di collaborazione vengono chiarite prima di iniziare, in totale trasparenza."
+    question: "Ci sono costi di ingresso, fee o pagamenti nascosti?",
+    answer: "Non applichiamo fee di ingresso o canoni di affiliazione per la collaborazione con Creditplan. Gli unici costi da considerare sono quelli legati al percorso formativo esterno e alla prova OAM, gestiti dagli enti preposti. Ci aspettiamo però serietà, continuità minima e rispetto delle procedure."
   },
   {
     question: "In quanto tempo posso essere operativo dopo la candidatura?",
@@ -140,7 +140,7 @@ const WHY_CHOOSE_BENEFITS_DATA = [
     color: "blue",
     title: "Più provvigioni dagli stessi clienti",
     description: "Aggiungi mutui e finanziamenti alle trattative che fai già.",
-    detailedContent: "Da agente immobiliare oggi porti a casa la provvigione sulla compravendita.\n\nCon Creditplan puoi affiancare mutui e finanziamenti ai clienti che già segui, senza cambiare lavoro e senza stravolgere la tua agenda.\n\nOgni operazione di credito andata a buon fine diventa una linea di guadagno extra, costruita sulle relazioni che hai già sviluppato sul territorio.",
+    detailedContent: "Da agente immobiliare oggi porti a casa la provvigione sulla compravendita.\n\nCon Creditplan puoi affiancare mutui e finanziamenti ai clienti che già segui, senza cambiare lavoro e senza stravolgere la tua agenda.",
     gradientFrom: "from-blue-500",
     gradientTo: "to-blue-600",
     borderColor: "border-blue-200",
@@ -152,7 +152,7 @@ const WHY_CHOOSE_BENEFITS_DATA = [
     color: "green",
     title: "Servizio completo: casa + mutuo",
     description: "Diventi il punto unico di riferimento per il cliente.",
-    detailedContent: "Dal 2022 la compatibilità è totale: agente immobiliare + consulente del credito = pacchetto completo.\n\nAcquirente e venditore non vogliono rimbalzare tra agenzia, banca, call center e preventivatori online.\n\nCon Creditplan affianchi alla tua attività la consulenza sul credito: l'agenzia diventa il luogo dove il cliente trova l'immobile, il mutuo, l'eventuale liquidità aggiuntiva e le risposte a tutte le sue domande finanziarie.\n\nChi offre questo livello di servizio oggi gioca in un campionato a parte.",
+    detailedContent: "Dal 2022 la compatibilità è totale: agente immobiliare + consulente del credito = pacchetto completo.\n\nAcquirente e venditore non vogliono rimbalzare tra agenzia, banca, call center e preventivatori online.\n\nCon Creditplan affianchi alla tua attività la consulenza sul credito.",
     gradientFrom: "from-emerald-500",
     gradientTo: "to-emerald-600",
     borderColor: "border-emerald-200",
@@ -164,7 +164,7 @@ const WHY_CHOOSE_BENEFITS_DATA = [
     color: "indigo",
     title: "Partnership testata, crescita concreta",
     description: "Collaborazioni attive con agenti dal 2022.",
-    detailedContent: "Non stiamo \"sperimentando\" adesso: collaboriamo con agenti immobiliari da anni e sappiamo cosa funziona sul campo.\n\nAbbiamo costruito un modello semplice: formazione operativa, affiancamento sulle prime pratiche, regole chiare sulle provvigioni e supporto continuo.\n\nL'obiettivo è uno solo: aiutarti a diventare tra i primi in Italia, nella tua zona, a offrire un servizio integrato immobiliare + credito davvero strutturato, non improvvisato.",
+    detailedContent: "Non stiamo \"sperimentando\" adesso: collaboriamo con agenti immobiliari da anni e sappiamo cosa funziona sul campo.\n\nAbbiamo costruito un modello semplice: formazione operativa, affiancamento sulle prime pratiche, regole chiare sulle provvigioni e supporto continuo.",
     gradientFrom: "from-indigo-500",
     gradientTo: "to-indigo-600",
     borderColor: "border-indigo-200",
@@ -176,7 +176,7 @@ const WHY_CHOOSE_BENEFITS_DATA = [
     color: "amber",
     title: "Backoffice e convenzioni al tuo servizio",
     description: "Tu segui il cliente, noi ti supportiamo su mutui e finanziamenti.",
-    detailedContent: "Il cliente resta sempre tuo: sei tu il suo punto di riferimento.\n\nCon Creditplan hai alle spalle un backoffice dedicato e tutte le principali convenzioni per:\n\n• mutui casa\n• finanziamenti aziendali\n• prestiti personali e cessioni del quinto\n• coperture assicurative collegate\n\nTi aiutiamo nella scelta del prodotto, nella gestione dei passaggi più tecnici e nel dialogo con gli istituti, lasciando a te la relazione diretta con il cliente.\n\nPiù servizi per lui, più opportunità di guadagno per te, senza snaturare il tuo ruolo di agente immobiliare.",
+    detailedContent: "Il cliente resta sempre tuo: sei tu il suo punto di riferimento.\n\nCon Creditplan hai alle spalle un backoffice dedicato e tutte le principali convenzioni per:\n\n• mutui casa\n• finanziamenti aziendali\n• prestiti personali e cessioni del quinto\n• coperture assicurative collegate",
     gradientFrom: "from-amber-500",
     gradientTo: "to-amber-600",
     borderColor: "border-amber-200",
